@@ -1,0 +1,20 @@
+{
+	"name": "SourceDataset_b7d",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sales.csv",
+				"folderPath": "input",
+				"container": "suresh"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

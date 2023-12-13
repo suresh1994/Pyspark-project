@@ -1,0 +1,9 @@
+{
+	"name": "firstdfone",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2af863b4-84a0-4f23-9d8f-643aff39af7f",
+		"tenantId": "4aee126f-a14e-4a0e-9195-3456441a432d"
+	}
+}
