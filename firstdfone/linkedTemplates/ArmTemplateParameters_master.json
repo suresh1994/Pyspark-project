@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "firstdfone"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"trigger1_properties_event trigger_parameters_Sourcepath": {
+			"value": "@triggerBody().filePath"
+		},
+		"trigger1_properties_event trigger_parameters_filename": {
+			"value": "@triggerBody().fileName"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/1f8daeeb-5376-42ad-84ce-6818292c9860/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storageaccounttwo22"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
