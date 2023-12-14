@@ -8,6 +8,10 @@
 				"pipelineReference": {
 					"referenceName": "event trigger",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"Sourcepath": "@triggerBody().filePath",
+					"filename": "@triggerBody().fileName"
 				}
 			}
 		],
