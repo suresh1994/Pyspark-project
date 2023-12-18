@@ -1,12 +1,12 @@
 {
-	"name": "2017onprem",
+	"name": "SqlServercarsss",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "SqlServer1",
+			"referenceName": "SqlServer3",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"TableName": {
+			"tablename": {
 				"type": "string"
 			}
 		},
@@ -16,7 +16,7 @@
 		"typeProperties": {
 			"schema": "dbo",
 			"table": {
-				"value": "@dataset().TableName",
+				"value": "@dataset().tablename",
 				"type": "Expression"
 			}
 		}

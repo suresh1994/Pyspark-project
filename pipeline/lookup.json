@@ -48,7 +48,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Copy data1",
+							"name": "Copydata1",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -94,8 +94,7 @@
 										"TableName": {
 											"value": "@item().name",
 											"type": "Expression"
-										},
-										"SchemaName": "dbo"
+										}
 									}
 								}
 							],
