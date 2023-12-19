@@ -1,0 +1,16 @@
+{
+	"name": "SqlServer4",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=LAPTOP-74KIGU06;initial catalog=books;user id=suresh",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5OTYzYmZiMC05MDJiLTRjY2ItYjk2YS0yNTA3ZWYxY2M4NzUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "onPrem",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
