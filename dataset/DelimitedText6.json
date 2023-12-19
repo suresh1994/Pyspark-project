@@ -1,0 +1,57 @@
+{
+	"name": "DelimitedText6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage4",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Invoices.csv",
+				"folderPath": "customer",
+				"container": "suresh"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Order Id",
+				"type": "String"
+			},
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Meal Id",
+				"type": "String"
+			},
+			{
+				"name": "Company Id",
+				"type": "String"
+			},
+			{
+				"name": "Date of Meal",
+				"type": "String"
+			},
+			{
+				"name": "Participants",
+				"type": "String"
+			},
+			{
+				"name": "Meal Price",
+				"type": "String"
+			},
+			{
+				"name": "Type of Meal",
+				"type": "String"
+			}
+		]
+	}
+}
