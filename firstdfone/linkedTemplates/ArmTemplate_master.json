@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
 		},
+		"AzureBlobStorage4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage4'"
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
@@ -31,6 +35,42 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2Pvt'"
 		},
+		"SqlServer1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer1'"
+		},
+		"SqlServer2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer2'"
+		},
+		"SqlServer3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer3'"
+		},
+		"SqlServer4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer4'"
+		},
+		"SqlServer5_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer5'"
+		},
+		"SqlServer6_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer6'"
+		},
+		"SqlServer7sales_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer7sales'"
+		},
+		"SqlServeronprem_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServeronprem'"
+		},
+		"joinssqlserver_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'joinssqlserver'"
+		},
 		"trigger1_properties_event trigger_parameters_Sourcepath": {
 			"type": "string",
 			"defaultValue": "@triggerBody().filePath"
@@ -40,6 +80,10 @@
 			"defaultValue": "@triggerBody().fileName"
 		},
 		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/1f8daeeb-5376-42ad-84ce-6818292c9860/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storageaccounttwo22"
+		},
+		"trigger2_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/1f8daeeb-5376-42ad-84ce-6818292c9860/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storageaccounttwo22"
 		},
@@ -84,20 +128,11 @@
 					"AzureBlobStorage2_connectionString": {
 						"value": "[parameters('AzureBlobStorage2_connectionString')]"
 					},
+					"AzureBlobStorage4_connectionString": {
+						"value": "[parameters('AzureBlobStorage4_connectionString')]"
+					},
 					"AzureSqlDatabase1_connectionString": {
 						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
-					},
-					"AzureBlobStorage3_connectionString": {
-						"value": "[parameters('AzureBlobStorage3_connectionString')]"
-					},
-					"AzureSqlDatabase2_connectionString": {
-						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
-					},
-					"AzureBlobStorage158_properties_privateLinkResourceId": {
-						"value": "[parameters('AzureBlobStorage158_properties_privateLinkResourceId')]"
-					},
-					"AzureBlobStorage158_properties_groupId": {
-						"value": "[parameters('AzureBlobStorage158_properties_groupId')]"
 					}
 				}
 			},
@@ -117,8 +152,67 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"SqlServer1_connectionString": {
+						"value": "[parameters('SqlServer1_connectionString')]"
+					},
+					"SqlServer2_connectionString": {
+						"value": "[parameters('SqlServer2_connectionString')]"
+					},
+					"SqlServer3_connectionString": {
+						"value": "[parameters('SqlServer3_connectionString')]"
+					},
+					"SqlServer4_connectionString": {
+						"value": "[parameters('SqlServer4_connectionString')]"
+					},
+					"SqlServer6_connectionString": {
+						"value": "[parameters('SqlServer6_connectionString')]"
+					},
+					"SqlServer7sales_connectionString": {
+						"value": "[parameters('SqlServer7sales_connectionString')]"
+					},
+					"SqlServeronprem_connectionString": {
+						"value": "[parameters('SqlServeronprem_connectionString')]"
+					},
+					"joinssqlserver_connectionString": {
+						"value": "[parameters('joinssqlserver_connectionString')]"
+					},
+					"AzureBlobStorage158_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureBlobStorage158_properties_privateLinkResourceId')]"
+					},
+					"AzureBlobStorage158_properties_groupId": {
+						"value": "[parameters('AzureBlobStorage158_properties_groupId')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "firstdfone_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage3_connectionString": {
+						"value": "[parameters('AzureBlobStorage3_connectionString')]"
+					},
+					"AzureSqlDatabase2_connectionString": {
+						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
+					},
 					"AzureSqlDatabase2Pvt_connectionString": {
 						"value": "[parameters('AzureSqlDatabase2Pvt_connectionString')]"
+					},
+					"SqlServer5_connectionString": {
+						"value": "[parameters('SqlServer5_connectionString')]"
 					},
 					"trigger1_properties_event trigger_parameters_Sourcepath": {
 						"value": "[parameters('trigger1_properties_event trigger_parameters_Sourcepath')]"
@@ -128,11 +222,14 @@
 					},
 					"trigger1_properties_typeProperties_scope": {
 						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
+					},
+					"trigger2_properties_typeProperties_scope": {
+						"value": "[parameters('trigger2_properties_typeProperties_scope')]"
 					}
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_0')]"
+				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_1')]"
 			]
 		}
 	]

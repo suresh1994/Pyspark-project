@@ -14,6 +14,9 @@
 		"AzureBlobStorage3_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorage4_connectionString": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},
@@ -23,6 +26,33 @@
 		"AzureSqlDatabase2Pvt_connectionString": {
 			"value": ""
 		},
+		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"SqlServer2_connectionString": {
+			"value": ""
+		},
+		"SqlServer3_connectionString": {
+			"value": ""
+		},
+		"SqlServer4_connectionString": {
+			"value": ""
+		},
+		"SqlServer5_connectionString": {
+			"value": ""
+		},
+		"SqlServer6_connectionString": {
+			"value": ""
+		},
+		"SqlServer7sales_connectionString": {
+			"value": ""
+		},
+		"SqlServeronprem_connectionString": {
+			"value": ""
+		},
+		"joinssqlserver_connectionString": {
+			"value": ""
+		},
 		"trigger1_properties_event trigger_parameters_Sourcepath": {
 			"value": "@triggerBody().filePath"
 		},
@@ -30,6 +60,9 @@
 			"value": "@triggerBody().fileName"
 		},
 		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/1f8daeeb-5376-42ad-84ce-6818292c9860/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storageaccounttwo22"
+		},
+		"trigger2_properties_typeProperties_scope": {
 			"value": "/subscriptions/1f8daeeb-5376-42ad-84ce-6818292c9860/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storageaccounttwo22"
 		},
 		"AzureBlobStorage158_properties_privateLinkResourceId": {
