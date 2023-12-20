@@ -1,0 +1,73 @@
+{
+	"name": "inputlastmodified",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage4",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().fileName",
+					"type": "Expression"
+				},
+				"folderPath": "input",
+				"container": "suresh"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Year",
+				"type": "String"
+			},
+			{
+				"name": "Industry_aggregation_NZSIOC",
+				"type": "String"
+			},
+			{
+				"name": "Industry_code_NZSIOC",
+				"type": "String"
+			},
+			{
+				"name": "Industry_name_NZSIOC",
+				"type": "String"
+			},
+			{
+				"name": "Units",
+				"type": "String"
+			},
+			{
+				"name": "Variable_code",
+				"type": "String"
+			},
+			{
+				"name": "Variable_name",
+				"type": "String"
+			},
+			{
+				"name": "Variable_category",
+				"type": "String"
+			},
+			{
+				"name": "Value",
+				"type": "String"
+			},
+			{
+				"name": "Industry_code_ANZSIC06",
+				"type": "String"
+			}
+		]
+	}
+}
