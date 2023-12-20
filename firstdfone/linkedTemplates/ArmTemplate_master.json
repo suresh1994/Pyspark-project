@@ -213,6 +213,26 @@
 					},
 					"SqlServer5_connectionString": {
 						"value": "[parameters('SqlServer5_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "firstdfone_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"trigger1_properties_event trigger_parameters_Sourcepath": {
 						"value": "[parameters('trigger1_properties_event trigger_parameters_Sourcepath')]"
@@ -229,7 +249,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_1')]"
+				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_2')]"
 			]
 		}
 	]
