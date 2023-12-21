@@ -44,6 +44,9 @@
 		"SqlServer6_connectionString": {
 			"value": ""
 		},
+		"SqlServer7multiple_connectionString": {
+			"value": ""
+		},
 		"SqlServer7sales_connectionString": {
 			"value": ""
 		},

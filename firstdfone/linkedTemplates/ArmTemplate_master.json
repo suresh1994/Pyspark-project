@@ -59,6 +59,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServer6'"
 		},
+		"SqlServer7multiple_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer7multiple'"
+		},
 		"SqlServer7sales_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServer7sales'"
@@ -167,6 +171,9 @@
 					"SqlServer6_connectionString": {
 						"value": "[parameters('SqlServer6_connectionString')]"
 					},
+					"SqlServer7multiple_connectionString": {
+						"value": "[parameters('SqlServer7multiple_connectionString')]"
+					},
 					"SqlServer7sales_connectionString": {
 						"value": "[parameters('SqlServer7sales_connectionString')]"
 					},
@@ -175,12 +182,6 @@
 					},
 					"joinssqlserver_connectionString": {
 						"value": "[parameters('joinssqlserver_connectionString')]"
-					},
-					"AzureBlobStorage158_properties_privateLinkResourceId": {
-						"value": "[parameters('AzureBlobStorage158_properties_privateLinkResourceId')]"
-					},
-					"AzureBlobStorage158_properties_groupId": {
-						"value": "[parameters('AzureBlobStorage158_properties_groupId')]"
 					}
 				}
 			},
@@ -213,6 +214,12 @@
 					},
 					"SqlServer5_connectionString": {
 						"value": "[parameters('SqlServer5_connectionString')]"
+					},
+					"AzureBlobStorage158_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureBlobStorage158_properties_privateLinkResourceId')]"
+					},
+					"AzureBlobStorage158_properties_groupId": {
+						"value": "[parameters('AzureBlobStorage158_properties_groupId')]"
 					}
 				}
 			},

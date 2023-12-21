@@ -27,6 +27,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServer6'"
 		},
+		"SqlServer7multiple_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer7multiple'"
+		},
 		"SqlServer7sales_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServer7sales'"
@@ -38,20 +42,39 @@
 		"joinssqlserver_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'joinssqlserver'"
-		},
-		"AzureBlobStorage158_properties_privateLinkResourceId": {
-			"type": "string",
-			"defaultValue": "/subscriptions/1f8daeeb-5376-42ad-84ce-6818292c9860/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storageaccounttwo22"
-		},
-		"AzureBlobStorage158_properties_groupId": {
-			"type": "string",
-			"defaultValue": "blob"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "employees.txt",
+						"folderPath": "emp",
+						"container": "suresh"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText3')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
@@ -560,6 +583,37 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/SqlServer7multiple')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"parameters": {
+					"dbname": {
+						"type": "string",
+						"defaultValue": "carss"
+					},
+					"db2019": {
+						"type": "string",
+						"defaultValue": "AdventureWorksLT2019"
+					},
+					"db2017": {
+						"type": "string",
+						"defaultValue": "AdventureWorksDW2019"
+					}
+				},
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('SqlServer7multiple_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "onPrem",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/SqlServer7sales')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -607,46 +661,6 @@
 					"referenceName": "onPrem",
 					"type": "IntegrationRuntimeReference"
 				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/azureprivateendpoint3')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "Managed",
-				"typeProperties": {
-					"computeProperties": {
-						"location": "East US",
-						"dataFlowProperties": {
-							"computeType": "General",
-							"coreCount": 8,
-							"timeToLive": 10,
-							"cleanup": false,
-							"customProperties": []
-						},
-						"pipelineExternalComputeScaleProperties": {
-							"timeToLive": 60,
-							"numberOfPipelineNodes": 1,
-							"numberOfExternalNodes": 1
-						}
-					}
-				},
-				"managedVirtualNetwork": {
-					"type": "ManagedVirtualNetworkReference",
-					"referenceName": "default"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/default/AzureBlobStorage158')]",
-			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"privateLinkResourceId": "[parameters('AzureBlobStorage158_properties_privateLinkResourceId')]",
-				"groupId": "[parameters('AzureBlobStorage158_properties_groupId')]"
 			},
 			"dependsOn": []
 		}
