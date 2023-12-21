@@ -1,23 +1,27 @@
 {
-	"name": "DelimitedText12",
+	"name": "Binary5",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage4",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
 				"folderPath": "input",
 				"container": "suresh"
-			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
-		},
-		"schema": []
+			}
+		}
 	}
 }
