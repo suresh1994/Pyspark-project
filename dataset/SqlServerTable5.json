@@ -1,0 +1,12 @@
+{
+	"name": "SqlServerTable5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer8",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}

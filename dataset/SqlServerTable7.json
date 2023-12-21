@@ -1,0 +1,23 @@
+{
+	"name": "SqlServerTable7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer11",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"table": {
+				"value": "@dataset().filename",
+				"type": "Expression"
+			}
+		}
+	}
+}
