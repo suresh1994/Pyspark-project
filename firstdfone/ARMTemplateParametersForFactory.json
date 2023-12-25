@@ -17,6 +17,9 @@
 		"AzureBlobStorage4_connectionString": {
 			"value": ""
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},
@@ -27,6 +30,18 @@
 			"value": ""
 		},
 		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"SqlServer10_connectionString": {
+			"value": ""
+		},
+		"SqlServer11_connectionString": {
+			"value": ""
+		},
+		"SqlServer12_connectionString": {
+			"value": ""
+		},
+		"SqlServer13_connectionString": {
 			"value": ""
 		},
 		"SqlServer2_connectionString": {
@@ -44,10 +59,19 @@
 		"SqlServer6_connectionString": {
 			"value": ""
 		},
+		"SqlServer7_connectionString": {
+			"value": ""
+		},
 		"SqlServer7multiple_connectionString": {
 			"value": ""
 		},
 		"SqlServer7sales_connectionString": {
+			"value": ""
+		},
+		"SqlServer8_connectionString": {
+			"value": ""
+		},
+		"SqlServer9_connectionString": {
 			"value": ""
 		},
 		"SqlServeronprem_connectionString": {
@@ -55,6 +79,12 @@
 		},
 		"joinssqlserver_connectionString": {
 			"value": ""
+		},
+		"linkedService1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsgentwo22.dfs.core.windows.net/"
 		},
 		"trigger1_properties_event trigger_parameters_Sourcepath": {
 			"value": "@triggerBody().filePath"
