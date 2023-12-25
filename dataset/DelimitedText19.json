@@ -2,16 +2,16 @@
 	"name": "DelimitedText19",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage4",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"folderPath": "new",
-				"container": "suresh"
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Gen2emp",
+				"fileSystem": "inlake"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -20,7 +20,15 @@
 		},
 		"schema": [
 			{
-				"name": "Identifier;Access code;Recovery code;First name;Last name;Department;Location",
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "name",
+				"type": "String"
+			},
+			{
+				"name": "gender",
 				"type": "String"
 			}
 		]

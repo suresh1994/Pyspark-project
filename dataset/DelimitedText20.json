@@ -2,92 +2,23 @@
 	"name": "DelimitedText20",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage4",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"fileName": "supermarket.csv",
-				"folderPath": "supermarket",
-				"container": "archives"
+				"type": "AzureBlobFSLocation",
+				"fileName": "ouput",
+				"folderPath": "inlake",
+				"fileSystem": "inlake"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "Invoice ID",
-				"type": "String"
-			},
-			{
-				"name": "Branch",
-				"type": "String"
-			},
-			{
-				"name": "City",
-				"type": "String"
-			},
-			{
-				"name": "Customer type",
-				"type": "String"
-			},
-			{
-				"name": "Gender",
-				"type": "String"
-			},
-			{
-				"name": "Product line",
-				"type": "String"
-			},
-			{
-				"name": "Unit price",
-				"type": "String"
-			},
-			{
-				"name": "Quantity",
-				"type": "String"
-			},
-			{
-				"name": "Tax 5%",
-				"type": "String"
-			},
-			{
-				"name": "Total",
-				"type": "String"
-			},
-			{
-				"name": "Date",
-				"type": "String"
-			},
-			{
-				"name": "Time",
-				"type": "String"
-			},
-			{
-				"name": "Payment",
-				"type": "String"
-			},
-			{
-				"name": "cogs",
-				"type": "String"
-			},
-			{
-				"name": "gross margin percentage",
-				"type": "String"
-			},
-			{
-				"name": "gross income",
-				"type": "String"
-			},
-			{
-				"name": "Rating",
-				"type": "String"
-			}
-		]
+		"schema": []
 	}
 }

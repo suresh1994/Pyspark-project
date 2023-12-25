@@ -1,23 +1,20 @@
 {
-	"name": "DelimitedText18",
+	"name": "Json1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage4",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "output",
+				"fileName": "json2.json",
+				"folderPath": "input",
 				"container": "suresh"
-			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			}
 		},
-		"schema": []
+		"schema": {}
 	}
 }
