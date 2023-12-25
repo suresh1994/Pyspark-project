@@ -1,0 +1,49 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText20",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "split1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          {Invoice ID} as string,",
+				"          Branch as string,",
+				"          City as string,",
+				"          {Customer type} as string,",
+				"          Gender as string,",
+				"          {Product line} as string,",
+				"          {Unit price} as string,",
+				"          Quantity as string,",
+				"          {Tax 5%} as string,",
+				"          Total as string,",
+				"          Date as string,",
+				"          Time as string,",
+				"          Payment as string,",
+				"          cogs as string,",
+				"          {gross margin percentage} as string,",
+				"          {gross income} as string,",
+				"          Rating as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 split(ERROR_FUNCTION(''),",
+				"     disjoint: false) ~> split1@(city1)"
+			]
+		}
+	}
+}
