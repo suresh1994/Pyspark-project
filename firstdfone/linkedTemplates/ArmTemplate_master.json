@@ -291,9 +291,6 @@
 					"SqlServer2_connectionString": {
 						"value": "[parameters('SqlServer2_connectionString')]"
 					},
-					"SqlServer3_connectionString": {
-						"value": "[parameters('SqlServer3_connectionString')]"
-					},
 					"AzureBatch1_properties_typeProperties_batchUri": {
 						"value": "[parameters('AzureBatch1_properties_typeProperties_batchUri')]"
 					},
@@ -325,6 +322,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"SqlServer3_connectionString": {
+						"value": "[parameters('SqlServer3_connectionString')]"
 					},
 					"SqlServer4_connectionString": {
 						"value": "[parameters('SqlServer4_connectionString')]"
