@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "firstdfone"
 		},
+		"AzureBatch1_accessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessKey' of 'AzureBatch1'"
+		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
@@ -111,9 +115,41 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
 		},
+		"AzureBatch1_properties_typeProperties_batchUri": {
+			"type": "string",
+			"defaultValue": "https://azurebatchone.eastus.batch.azure.com"
+		},
+		"AzureBatch1_properties_typeProperties_poolName": {
+			"type": "string",
+			"defaultValue": "suresh"
+		},
+		"AzureBatch1_properties_typeProperties_accountName": {
+			"type": "string",
+			"defaultValue": "azurebatchone"
+		},
+		"AzureBlobStorage5_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "accesskey-azureblob"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsgentwo22.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://blob4.vault.azure.net/"
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://blob4.vault.azure.net/"
+		},
+		"AzureKeyVault3_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://blob4.vault.azure.net/"
+		},
+		"AzureKeyVault4_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://blob4.vault.azure.net/"
 		},
 		"trigger1_properties_event trigger_parameters_Sourcepath": {
 			"type": "string",
@@ -183,6 +219,18 @@
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"AzureKeyVault2_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault2_properties_typeProperties_baseUrl')]"
+					},
+					"AzureKeyVault3_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault3_properties_typeProperties_baseUrl')]"
+					},
+					"AzureKeyVault4_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault4_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},
@@ -222,6 +270,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureBatch1_accessKey": {
+						"value": "[parameters('AzureBatch1_accessKey')]"
+					},
 					"SqlServer1_connectionString": {
 						"value": "[parameters('SqlServer1_connectionString')]"
 					},
@@ -245,6 +296,38 @@
 					},
 					"SqlServer4_connectionString": {
 						"value": "[parameters('SqlServer4_connectionString')]"
+					},
+					"AzureBatch1_properties_typeProperties_batchUri": {
+						"value": "[parameters('AzureBatch1_properties_typeProperties_batchUri')]"
+					},
+					"AzureBatch1_properties_typeProperties_poolName": {
+						"value": "[parameters('AzureBatch1_properties_typeProperties_poolName')]"
+					},
+					"AzureBatch1_properties_typeProperties_accountName": {
+						"value": "[parameters('AzureBatch1_properties_typeProperties_accountName')]"
+					},
+					"AzureBlobStorage5_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('AzureBlobStorage5_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "firstdfone_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"SqlServer6_connectionString": {
 						"value": "[parameters('SqlServer6_connectionString')]"
@@ -272,26 +355,6 @@
 					},
 					"linkedService1_connectionString": {
 						"value": "[parameters('linkedService1_connectionString')]"
-					}
-				}
-			},
-			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_1')]"
-			]
-		},
-		{
-			"name": "firstdfone_ArmTemplate_3",
-			"type": "Microsoft.Resources/deployments",
-			"apiVersion": "2018-02-01",
-			"properties": {
-				"mode": "incremental",
-				"templateLink": {
-					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
-					"contentVersion": "1.0.0.0"
-				},
-				"parameters": {
-					"factoryName": {
-						"value": "[parameters('factoryName')]"
 					},
 					"AzureBlobStorage158_properties_privateLinkResourceId": {
 						"value": "[parameters('AzureBlobStorage158_properties_privateLinkResourceId')]"
@@ -330,6 +393,26 @@
 					},
 					"SqlServer5_connectionString": {
 						"value": "[parameters('SqlServer5_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "firstdfone_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"trigger1_properties_event trigger_parameters_Sourcepath": {
 						"value": "[parameters('trigger1_properties_event trigger_parameters_Sourcepath')]"
@@ -346,7 +429,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_3')]"
+				"[resourceId('Microsoft.Resources/deployments', 'firstdfone_ArmTemplate_4')]"
 			]
 		}
 	]

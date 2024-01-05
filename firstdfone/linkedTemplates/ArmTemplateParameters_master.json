@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "firstdfone"
 		},
+		"AzureBatch1_accessKey": {
+			"value": ""
+		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
@@ -83,8 +86,32 @@
 		"linkedService1_connectionString": {
 			"value": ""
 		},
+		"AzureBatch1_properties_typeProperties_batchUri": {
+			"value": "https://azurebatchone.eastus.batch.azure.com"
+		},
+		"AzureBatch1_properties_typeProperties_poolName": {
+			"value": "suresh"
+		},
+		"AzureBatch1_properties_typeProperties_accountName": {
+			"value": "azurebatchone"
+		},
+		"AzureBlobStorage5_properties_typeProperties_connectionString_secretName": {
+			"value": "accesskey-azureblob"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adlsgentwo22.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://blob4.vault.azure.net/"
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"value": "https://blob4.vault.azure.net/"
+		},
+		"AzureKeyVault3_properties_typeProperties_baseUrl": {
+			"value": "https://blob4.vault.azure.net/"
+		},
+		"AzureKeyVault4_properties_typeProperties_baseUrl": {
+			"value": "https://blob4.vault.azure.net/"
 		},
 		"trigger1_properties_event trigger_parameters_Sourcepath": {
 			"value": "@triggerBody().filePath"
